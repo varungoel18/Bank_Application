@@ -25,3 +25,6 @@ class BankAccount:
             print(f"Transferred ${amount} to account {other_account.account_number}")
         else:
             print("Insufficient balance for transfer")
+
+    def get_balance(self):
+        print(f"Account balance: ${self.balance:.2f}")

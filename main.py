@@ -3,6 +3,7 @@ from SavingAccount import SavingAccount
 
 
 def main():
+    global account_number, account_holder
     accounts = {}
     while True:
         print("1. Create savings account")
@@ -18,12 +19,12 @@ def main():
             account_number = input("Enter the account number: ")
             account_holder = input("Enter account holder name: ")
 
-            if choice ==1:
-                accounts[account_number] = SavingAccount(account_number,account_holder)
+            if choice == 1:
+                accounts[account_number] = SavingAccount(account_number, account_holder)
                 print("Saving account Created")
 
-        elif choice ==2:
-            accounts[account_number]  = CurrentAccount(account_number,account_holder)
+        elif choice == 2:
+            accounts[account_number] = CurrentAccount(account_number, account_holder)
             print("Current account created")
 
         elif choice == 3:
@@ -38,7 +39,7 @@ def main():
             account_number = input("Enter the account number: ")
             if account_number in accounts:
                 amount = float(input("Enter the withdrawl amount"))
-                accounts[account_number].withdrawl(amount)
+                accounts[account_number].withdraw(amount)
             else:
                 print("Account not found")
 
@@ -47,7 +48,7 @@ def main():
             account_number2 = input("Enter the destination account number: ")
             if account_number1 in accounts and account_number2 in accounts:
                 amount = float(input("Enter the transfer amount: "))
-                accounts[account_number1].transfer(accounts[account_number2],amount)
+                accounts[account_number1].transfer(accounts[account_number2], amount)
 
             else:
                 print("One or both accounts not found")
@@ -59,12 +60,13 @@ def main():
             else:
                 print("Account not found")
 
-        elif choice == 7 :
+        elif choice == 7:
             print("Exiting..")
             break
 
         else:
             print("Invalid choice,please try again")
+
 
 if __name__ == "__main__":
     main()
