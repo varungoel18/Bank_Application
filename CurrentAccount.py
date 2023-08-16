@@ -8,6 +8,6 @@ class CurrentAccount(BankAccount):
 
     def withdraw(self,amount):
         if self.balance >= (amount+200):
-            super.withdraw(amount+200)
+            super().withdraw(amount+200)
         else:
             print("Insufficient funds for withdrawl")
