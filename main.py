@@ -19,9 +19,9 @@ def main():
             account_number = input("Enter the account number: ")
             account_holder = input("Enter account holder name: ")
 
-            if choice == 1:
-                accounts[account_number] = SavingAccount(account_number, account_holder)
-                print("Saving account Created")
+        if choice == 1:
+            accounts[account_number] = SavingAccount(account_number, account_holder)
+            print("Saving account Created")
 
         elif choice == 2:
             accounts[account_number] = CurrentAccount(account_number, account_holder)
